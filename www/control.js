@@ -159,24 +159,10 @@ $(function () {
       break;
       //Decrease Speed
       case "ArrowLeft":
-        var x = $speed.offset().left;
-        alert('x: ' + x);
-        var pct = x / $speed.outerWidth();
-        alert('pct: ' + pct);
-        alert('speed: ' + speed);
-        
-        var normy = Math.max(Math.min(pct, 1), 0);
-        alert('normy: ' + normy);
-        alert('round normy: ' + Math.round(normy * 1000) / 10);
-
-        speedy = Math.pow(normy, 2);
-        alert('speedy: ' + speedy);
-        alert('normy: ' + normy);
-        
-        //if (pct > 4) { pct = parseFloat(pct - 5); }
-        //alert(Math.pow(pct, 2));
-        
-        //setSpeed(pct);
+        var curSpeed = $speedDisplay.html();
+        var newSpeed = parseFloat(curSpeed / 100);
+        if (curSpeed > 4) { newSpeed = parseFloat( (curSpeed - 5) / 100 ); }
+        setSpeed(newSpeed);
       break;
       //Increase Speed
       case "ArrowRight":
