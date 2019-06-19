@@ -163,6 +163,14 @@ $(function () {
         var pct = x / $speed.outerWidth();
         alert(pct);
         alert(speed);
+        
+        var normy = Math.max(Math.min(pct, 1), 0);
+        $speedDisplay.html(Math.round(normy * 1000) / 10);
+
+        speedy = Math.pow(normy, 2);
+        alert(speedy);
+        alert(normy);
+        
         //if (pct > 4) { pct = parseFloat(pct - 5); }
         //alert(Math.pow(pct, 2));
         
