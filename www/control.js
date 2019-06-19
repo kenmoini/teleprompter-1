@@ -155,6 +155,23 @@ $(function () {
       case "ArrowDown":
         postEvent({ type: 'jump', direction: 1 });
       break;
+      //Decrease Speed
+      case "ArrowLeft":
+        var x = $speed.offset().left;
+        if (x > 4) { x = x - 5; }
+        var pct = x / $speed.outerWidth();
+
+        setSpeed(pct);
+      break;
+      //Increase Speed
+      case "ArrowRight":
+        
+        var x = $speed.offset().left;
+        if (x < 96) { x = x + 5; }
+        var pct = x / $speed.outerWidth();
+
+        setSpeed(pct);
+      break;
     }
   }
 });
