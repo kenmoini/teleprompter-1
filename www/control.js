@@ -108,14 +108,7 @@ $(function () {
   });
 
   $play.click(function (e) {
-    $play.toggleClass('paused');
-    $speed.toggleClass('paused');
-
-    if ($play.hasClass('paused')) {
-      postEvent({ type: 'speed', speed: 0 });
-    } else {
-      postEvent({ type: 'speed', speed: speed });
-    }
+    processPlay(e);
   });
 
   $reset.click(function (e) {
@@ -129,4 +122,38 @@ $(function () {
   $forward.click(function (e) {
     postEvent({ type: 'jump', direction: 1 });
   });
+  
+  document.addEventListener('keypress', fireKeys);
+  
+  function processPlay(e) {
+    $play.toggleClass('paused');
+    $speed.toggleClass('paused');
+
+    if ($play.hasClass('paused')) {
+      postEvent({ type: 'speed', speed: 0 });
+    } else {
+      postEvent({ type: 'speed', speed: speed });
+    }
+  }
+  
+  function fireKeys(e) {
+    switch (e.code) {
+      //Play
+      case "KeyP":
+        processPlay(e);
+      break;
+      //Stop (Reset)
+      case "Escape":
+        postEvent({ type: 'position', y: 0 });
+      break;
+      //Prev Section
+      case "ArrowUp":
+        postEvent({ type: 'jump', direction: -1 });
+      break;
+      //Next Section
+      case "ArrowDown":
+        postEvent({ type: 'jump', direction: 1 });
+      break;
+    }
+  }
 });
