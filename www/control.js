@@ -124,7 +124,7 @@ $(function () {
   });
   
   //document.addEventListener('keypress', fireKeys);
-  $(document).keypress(function(e) { alert('keypfire'); fireKeys(e); });
+  $(document).keypress(function(e) { fireKeys(e); });
   
   function processPlay(e) {
     $play.toggleClass('paused');
@@ -138,13 +138,11 @@ $(function () {
   }
   
   function fireKeys(e) {
-    alert('fireKeys');
-    alert(e.keyCode);
-    alert(e.code);
-    switch (e.code) {
+    alert(e.key);
+    switch (e.key) {
       //Play
-      case "KeyP":
-        alert('KeyP');
+      case "p":
+        alert('p');
         processPlay(e);
       break;
       //Stop (Reset)
