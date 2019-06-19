@@ -5,18 +5,19 @@
   "main": "lib/index.js",
   "bin": "bin/teleprompter",
   "scripts": {
-    "test": "node test/index.js | faucet"
+    "test": "node test/index.js | faucet",
+    "run": "node bin/teleprompter"
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Schoonology/teleprompter.git"
+    "url": "git+https://github.com/kenmoini/teleprompter-1.git"
   },
   "author": "Michael Schoonmaker <michael.r.schoonmaker@gmail.com>",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Schoonology/teleprompter/issues"
+    "url": "https://github.com/kenmoini/teleprompter-1/issues"
   },
-  "homepage": "https://github.com/Schoonology/teleprompter#readme",
+  "homepage": "https://github.com/kenmoini/teleprompter-1#readme",
   "dependencies": {
     "bluebird": "~3.3.1",
     "body-parser": "~1.15.0",
