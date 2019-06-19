@@ -162,7 +162,7 @@ $(function () {
         alert(x);
         var pct = x / $speed.outerWidth();
         alert(pct);
-        alert(Math.pow(pct, 2));
+        alert(speed);
         //if (pct > 4) { pct = parseFloat(pct - 5); }
         //alert(Math.pow(pct, 2));
         
@@ -175,7 +175,7 @@ $(function () {
         var pct = x / $speed.outerWidth();
         alert(x);
         alert(pct);
-        alert(Math.pow(pct, 2));
+        alert(speed);
         
         //setSpeed(pct);
       break;
