@@ -138,26 +138,21 @@ $(function () {
   }
   
   function fireKeys(e) {
-    alert(e.key);
     switch (e.key) {
       //Play
       case "p":
-        alert('p');
         processPlay(e);
       break;
       //Stop (Reset)
       case "Escape":
-        alert('Escape');
         postEvent({ type: 'position', y: 0 });
       break;
       //Prev Section
       case "ArrowUp":
-        alert('ArrowUp');
         postEvent({ type: 'jump', direction: -1 });
       break;
       //Next Section
       case "ArrowDown":
-        alert('ArrowDown');
         postEvent({ type: 'jump', direction: 1 });
       break;
     }
