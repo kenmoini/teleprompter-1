@@ -63,6 +63,7 @@ $(function () {
     $speedDisplay.html(Math.round(normal * 1000) / 10);
 
     speed = Math.pow(normal, 2);
+    alert(speed);
 
     if (!$play.hasClass('paused')) {
       postSpeedEvent(speed);
