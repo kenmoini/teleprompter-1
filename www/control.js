@@ -185,6 +185,7 @@ $(function () {
         alert(x);
         alert(pct);
         alert(speed);
+        alert(speed * 100);
         
         //setSpeed(pct);
       break;
