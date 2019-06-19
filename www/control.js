@@ -63,7 +63,6 @@ $(function () {
     $speedDisplay.html(Math.round(normal * 1000) / 10);
 
     speed = Math.pow(normal, 2);
-    alert(speed);
 
     if (!$play.hasClass('paused')) {
       postSpeedEvent(speed);
@@ -163,8 +162,9 @@ $(function () {
         alert(x);
         var pct = x / $speed.outerWidth();
         alert(pct);
-        if (pct > 4) { pct = parseFloat(pct - 5); }
-        alert(pct);
+        alert(Math.pow(pct, 2));
+        //if (pct > 4) { pct = parseFloat(pct - 5); }
+        //alert(Math.pow(pct, 2));
         
         //setSpeed(pct);
       break;
@@ -175,6 +175,7 @@ $(function () {
         var pct = x / $speed.outerWidth();
         alert(x);
         alert(pct);
+        alert(Math.pow(pct, 2));
         
         //setSpeed(pct);
       break;
