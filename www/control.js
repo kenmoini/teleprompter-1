@@ -123,7 +123,8 @@ $(function () {
     postEvent({ type: 'jump', direction: 1 });
   });
   
-  document.addEventListener('keypress', fireKeys);
+  //document.addEventListener('keypress', fireKeys);
+  $(document).keypress(function(e) { fireKeys(e); });
   
   function processPlay(e) {
     $play.toggleClass('paused');
