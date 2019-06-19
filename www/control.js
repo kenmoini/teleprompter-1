@@ -52,6 +52,8 @@ $(function () {
   function updateSpeed(event) {
     var x = event.clientX - $speed.offset().left;
     var pct = x / $speed.outerWidth();
+    console.log('triggered x:' + x);
+    console.log('triggered pct:' + pct);
 
     setSpeed(pct);
   }
@@ -157,7 +159,6 @@ $(function () {
       break;
       //Decrease Speed
       case "ArrowLeft":
-        
         var x = $speed.offset().left;
         alert('x: ' + x);
         var pct = x / $speed.outerWidth();
