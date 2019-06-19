@@ -6,7 +6,7 @@
   "bin": "bin/teleprompter",
   "scripts": {
     "test": "node test/index.js | faucet",
-    "start": "node bin/teleprompter"
+    "start": "node bin/teleprompter scripts"
   },
   "repository": {
     "type": "git",
