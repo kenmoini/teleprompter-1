@@ -157,19 +157,20 @@ $(function () {
       break;
       //Decrease Speed
       case "ArrowLeft":
-        var x = $speed.offset().left;
-        if (x > 4) { x = x - 5; }
+        
+        var x = event.clientX - $speed.offset().left;
         var pct = x / $speed.outerWidth();
-
+        if (pct > 4) { pct = parseFloat(pct - 5); }
+        
         setSpeed(pct);
       break;
       //Increase Speed
       case "ArrowRight":
         
-        var x = $speed.offset().left;
-        if (x < 96) { x = x + 5; }
+        var x = event.clientX - $speed.offset().left;
         var pct = x / $speed.outerWidth();
-
+        if (pct < 96) { pct = parseFloat(pct + 5); }
+        
         setSpeed(pct);
       break;
     }
