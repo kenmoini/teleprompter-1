@@ -180,15 +180,10 @@ $(function () {
       break;
       //Increase Speed
       case "ArrowRight":
-        
-        var x = $speed.offset().left;
-        var pct = x / $speed.outerWidth();
-        alert(x);
-        alert(pct);
-        alert(speed);
-        alert(speed * 100);
-        
-        //setSpeed(pct);
+        var curSpeed = $speedDisplay.html();
+        var newSpeed = parseFloat(curSpeed / 100);
+        if (curSpeed < 96) { newSpeed = parseFloat( (curSpeed + 5) / 100 ); }
+        setSpeed(newSpeed);
       break;
     }
   }
