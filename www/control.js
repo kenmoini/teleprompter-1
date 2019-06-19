@@ -124,7 +124,7 @@ $(function () {
   });
   
   //document.addEventListener('keypress', fireKeys);
-  $(document).keypress(function(e) { fireKeys(e); });
+  $(document).keyup(function(e) { fireKeys(e); });
   
   function processPlay(e) {
     $play.toggleClass('paused');
