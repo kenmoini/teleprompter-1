@@ -168,7 +168,10 @@ $(function () {
       case "ArrowRight":
         var curSpeed = $speedDisplay.html();
         var newSpeed = parseFloat(curSpeed / 100);
+        console.log('curSpeed' + curSpeed);
+        console.log('newSpeed' + newSpeed);
         if (curSpeed < 96) { newSpeed = parseFloat( (curSpeed + 5) / 100 ); }
+        console.log('newSpeed' + newSpeed);
         setSpeed(newSpeed);
       break;
     }
