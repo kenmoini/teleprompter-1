@@ -128,6 +128,6 @@ The following keys have been mapped to the various control options on the Contro
 
 Personally I have the "Zoweetek Wireless Presenter with Mouse Functions and Red Laser" device and it works great.  If you have another device that uses different keys, like maybe the actual Play/Stop media keys, it's easy to swap the input actuation:
 
-1. Grab your desired Key Code from https://keycode.info/
-2. Change lines 142+ to your desired input functions
+1. Grab your desired Key from https://keycode.info/
+2. Change lines 142+ to your desired input functions in www/control.js
 3. Present
