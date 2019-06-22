@@ -6,6 +6,9 @@ scrolling the script consistently. A second web browser can be attached to a
 jump back to the top of the script. Each scrolling view can be adjusted to
 conform to different equipment needs.
 
+This is based on the teleprompter software by Schonology https://github.com/Schoonology/teleprompter
+Fixes have been included to patch the screen mirroring, and additional functionality has been added to enable keyboard input on the Control pages.  Read more about the Keyboard Input below, which can also be used with an AirMouse that has directional buttons and Start/Stop.
+
 ## Installation
 
 1. Install [Node][node].
@@ -38,6 +41,13 @@ A setup that has worked well in studios so far has included the following:
 - A second tablet used as a monitor for the Teleprompter operator.
 - A smartphone connected to that script's Control view, also for the
   Teleprompter operator.
+  
+## OpenShift Installation
+
+1. Fork this repo
+2. Use the NodeJS S2I Builder Image with said forked repo
+3. ??????
+4. PROFIT!!!!1
 
 ## Detailed usage
 
@@ -104,3 +114,20 @@ Name | Description
 `content` | The content itself has been updated, and the Script client should reload.
 `position` | The scroll position should be reset to `y`, defaulting to `0` (top).
 `speed` | The scroll speed should be updated to `speed`, defaulting to `0` (stop).
+
+## Keyboard Input
+
+The following keys have been mapped to the various control options on the Control route.
+
+- **Left Arrow Key** - Decrease Speed
+- **Right Arrow Key** - Increase Speed
+- **Up Arrow Key** - Previous Section
+- **Down Arrow Key** - Next Section
+- **P** - Play/Pause
+- **Escape** - Stop/Start
+
+Personally I have the "Zoweetek Wireless Presenter with Mouse Functions and Red Laser" device and it works great.  If you have another device that uses different keys, like maybe the actual Play/Stop media keys, it's easy to swap the input actuation:
+
+1. Grab your desired Key Code from https://keycode.info/
+2. Change lines 142+ to your desired input functions
+3. Present
