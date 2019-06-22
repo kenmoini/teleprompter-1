@@ -52,8 +52,6 @@ $(function () {
   function updateSpeed(event) {
     var x = event.clientX - $speed.offset().left;
     var pct = x / $speed.outerWidth();
-    console.log('triggered x:' + x);
-    console.log('triggered pct:' + pct);
 
     setSpeed(pct);
   }
@@ -159,22 +157,18 @@ $(function () {
       break;
       //Decrease Speed
       case "ArrowLeft":
+        //Kinda hacky, but hey, it works
         var curSpeed = $speedDisplay.html();
         var newSpeed = parseFloat(curSpeed / 100);
-        console.log('curSpeed' + curSpeed);
-        console.log('newSpeed' + newSpeed);
         if (curSpeed > 4) { newSpeed = Number( Number(parseFloat(curSpeed) - 5) / 100 ); }
-        console.log('newSpeed' + newSpeed);
         setSpeed(newSpeed);
       break;
       //Increase Speed
       case "ArrowRight":
+        //Kinda hacky, but hey, it works
         var curSpeed = $speedDisplay.html();
         var newSpeed = parseFloat(curSpeed / 100);
-        console.log('curSpeed' + curSpeed);
-        console.log('newSpeed' + newSpeed);
         if (curSpeed < 96) { newSpeed = Number( Number(parseFloat(curSpeed) + 5) / 100 ); }
-        console.log('newSpeed' + newSpeed);
         setSpeed(newSpeed);
       break;
     }
