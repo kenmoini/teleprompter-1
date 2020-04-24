@@ -1,0 +1,8 @@
+version: '3'
+services:
+  teleprompter:
+    build: .
+    ports:
+      - "4200:8080"
+    volumes:
+      - ./scripts:/usr/src/app/scripts
