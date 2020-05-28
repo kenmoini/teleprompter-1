@@ -8,4 +8,6 @@ COPY . .
 
 RUN npm install
 
+EXPOSE 8080
+
 CMD "/usr/src/app/start.sh"
