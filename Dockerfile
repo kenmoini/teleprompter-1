@@ -1,7 +1,7 @@
 FROM registry.access.redhat.com/ubi8/nodejs-10
 
 # Create app directory
-WORKDIR /usr/src/app
+WORKDIR /tmp
 
 # Bundle app source
 COPY . .
@@ -13,4 +13,4 @@ RUN npm install
 EXPOSE 8080
 
 # Start server
-CMD "/usr/src/app/start.sh"
+CMD "/tmp/start.sh"
