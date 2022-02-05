@@ -19,7 +19,7 @@
   },
   "homepage": "https://github.com/kenmoini/teleprompter-1#readme",
   "dependencies": {
-    "bluebird": "~3.3.1",
+    "bluebird": "~3.7.2",
     "body-parser": "~1.15.0",
     "dot": "~1.0.3",
     "ecstatic": "~1.4.0",
