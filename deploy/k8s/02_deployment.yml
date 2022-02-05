@@ -1,0 +1,36 @@
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: teleprompter
+  namespace: teleprompter
+  labels:
+    app: teleprompter
+    app.kubernetes.io/name: teleprompter
+    app.kubernetes.io/part-of: teleprompter
+spec:
+  selector:
+    matchLabels:
+      app: teleprompter
+  strategy:
+    type: RollingUpdate
+  template:
+    metadata:
+      labels:
+        app: teleprompter
+    spec:
+      terminationGracePeriodSeconds: 30
+      containers:
+        - name: teleprompter
+          imagePullPolicy: Always
+          image: quay.io/kenmoini/teleprompter:latest
+          ports:
+            - containerPort: 8080
+              name: web
+          resources:
+            requests:
+              memory: "128Mi"
+              cpu: "125m"
+            limits:
+              memory: "512Mi"
+              cpu: "500m"

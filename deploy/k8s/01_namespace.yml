@@ -1,0 +1,9 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: teleprompter
+  labels:
+    app: teleprompter
+    app.kubernetes.io/name: teleprompter
+    app.kubernetes.io/part-of: teleprompter

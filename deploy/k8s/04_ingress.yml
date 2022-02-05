@@ -1,0 +1,29 @@
+kind: Ingress
+apiVersion: networking.k8s.io/v1
+metadata:
+  name: teleprompter-ingress
+  namespace: teleprompter
+  labels:
+    app: teleprompter
+    app.kubernetes.io/name: teleprompter-ingress
+    app.kubernetes.io/part-of: teleprompter
+  annotations:
+    kubernetes.io/ingress.class: "nginx"
+    cert-manager.io/cluster-issuer: "letsencrypt-dns-prod"
+    nginx.ingress.kubernetes.io/ssl-redirect: "false"
+spec:
+  tls:
+    - hosts:
+        - teleprompter.dok8s.kenmoini.com
+      secretName: teleprompter-tls
+  rules:
+    - host: teleprompter.dok8s.kenmoini.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: teleprompter-svc
+                port:
+                  number: 8080

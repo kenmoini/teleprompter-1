@@ -1,0 +1,16 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: teleprompter-svc
+  namespace: teleprompter
+  labels:
+    app: teleprompter
+    app.kubernetes.io/name: teleprompter
+    app.kubernetes.io/part-of: teleprompter
+spec:
+  ports:
+    - port: 8080
+      name: web
+  selector:
+    app: teleprompter
