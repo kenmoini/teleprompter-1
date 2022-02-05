@@ -2,7 +2,7 @@ name: Build Container & Deploy to K8s
 on:
   push:
     branches:
-      - main
+      - master
 jobs:
   # Build the container
   build-container:
