@@ -60,7 +60,7 @@ jobs:
       run: doctl kubernetes cluster kubeconfig save --expiry-seconds 600 ${{ secrets.DO_CLUSTER_ID }}
     
     - name: Update deployment file
-      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|:latest|:'${TAG}'|' $GITHUB_WORKSPACE/deploy/k8s/02-deployment.yaml
+      run: TAG=$(echo $GITHUB_SHA | head -c7) && sed -i 's|:latest|:'${TAG}'|' $GITHUB_WORKSPACE/deploy/k8s/02_deployment.yml
 
     - name: Deploy to DigitalOcean Kubernetes
       run: kubectl apply -f $GITHUB_WORKSPACE/deploy/k8s/
